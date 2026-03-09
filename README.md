@@ -1,5 +1,4 @@
-<div align="center">
-  <img src="https://img.icons8.com/color/96/000000/soccer-ball.png" alt="Soccer Ball Icon" width="80" height="80" />
+
 
   # ⚽ Boy Soccer Skill Assessment
 
