@@ -270,7 +270,7 @@ export default function SoccerAcademyDashboard() {
             window.location.origin.includes('usercontent.goog');
         if (isSandboxed) {
             alert(
-                'คำสั่ง Print ถูกส่งแล้ว!\n\n(หมายเหตุ: ในหน้าพรีวิวนี้ เบราว์เซอร์อาจบล็อกหน้าต่าง Print/Save as PDF แต่เมื่อคุณนำโค้ดไปรันบนเครื่องจริง จะใช้งานได้ปกติครับ)'
+                'คำสั่ง Print ถูกส่งแล้ว!'
             );
         }
         window.print();
