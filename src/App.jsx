@@ -39,7 +39,7 @@ const CLASS_CONFIG = {
         text: 'text-yellow-800',
     },
     coach_saman: {
-        name: 'รุ่นโค้ชสมาน',
+        name: 'รุ่นโค้ชกัปตัน',
         color: 'bg-blue-600',
         border: 'border-blue-600',
         bgLight: 'bg-blue-50',
