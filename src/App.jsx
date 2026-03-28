@@ -438,14 +438,18 @@ export default function SoccerAcademyDashboard() {
             <header className="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-md print:hidden no-print">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                            <Activity className="w-6 h-6 text-green-400" />
+                        <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1">
+                            <img 
+                                src={logoImage} 
+                                alt="Boy Soccer Academy Logo" 
+                                className="w-full h-full object-contain"
+                            />
                         </div>
                         <div>
                             <h1 className="text-xl font-bold leading-tight">
                                 Boy Soccer Academy
                             </h1>
-                            <p className="text-xs text-slate-400">Coach Management System</p>
+                            <p className="text-xs text-slate-400">Evaluation Reporting System</p>
                         </div>
                     </div>
 
@@ -566,9 +570,49 @@ export default function SoccerAcademyDashboard() {
                 {/* MAIN REPORT AREA */}
                 <div className="lg:col-span-9 print:w-full">
                     {!selectedPlayer ? (
-                        <div className="h-full flex flex-col items-center justify-center text-slate-300 p-12 border-2 border-dashed border-slate-200 rounded-xl bg-slate-50/50 print:hidden no-print">
-                            <FileText className="w-16 h-16 mb-4" />
-                            <p>เลือกรายชื่อเพื่อดูรายงาน</p>
+                        <div className="h-full flex flex-col items-center justify-center p-8 border-2 border-dashed border-slate-300 rounded-xl bg-slate-50 print:hidden no-print">
+                            <div className="max-w-xl w-full bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                                    <div className="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center">
+                                        <FileText className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <h2 className="text-xl font-bold text-slate-800">วิธีใช้งานระบบ</h2>
+                                        <p className="text-sm text-slate-500">คำแนะนำในการเริ่มต้นใช้งาน Dashboard ออกรายงานประเมินผลนักกีฬา</p>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-6">
+                                    <div className="flex gap-4">
+                                        <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center font-bold text-sm shrink-0">1</div>
+                                        <div>
+                                            <h3 className="font-semibold text-slate-700">เตรียมไฟล์ข้อมูล (CSV File)</h3>
+                                            <p className="text-sm text-slate-500 mt-1">เตรียมไฟล์รายชื่อและคะแนนประเมิน โดยแถวแรกต้องมีคอลัมน์ <span className="text-slate-700 font-medium bg-slate-100 px-1 rounded">ชื่อ</span> และคอลัมน์ชื่อทักษะต่างๆ ที่ต้องการประเมิน (ให้คะแนน 1-4)</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center font-bold text-sm shrink-0">2</div>
+                                        <div>
+                                            <h3 className="font-semibold text-slate-700">นำเข้าข้อมูล (Import CSV)</h3>
+                                            <p className="text-sm text-slate-500 mt-1">คลิกปุ่ม <span className="font-semibold text-green-600 bg-green-50 px-2 py-0.5 rounded text-xs"><Upload className="w-3 h-3 inline mr-1"/>Import CSV</span> ที่แถบเมนูด้านบนขวา และเลือกไฟล์ที่เตรียมไว้</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center font-bold text-sm shrink-0">3</div>
+                                        <div>
+                                            <h3 className="font-semibold text-slate-700">เลือกรายชื่อนักกีฬา</h3>
+                                            <p className="text-sm text-slate-500 mt-1">คลิกเลือกชื่อนักกีฬาจากรายการด้านซ้ายมือ เพื่อดูรายงานการประเมินแบบกราฟและแถบคะแนน</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center font-bold text-sm shrink-0">4</div>
+                                        <div>
+                                            <h3 className="font-semibold text-slate-700">พิมพ์รายงานและบันทึก (Print/PDF)</h3>
+                                            <p className="text-sm text-slate-500 mt-1">คลิกปุ่ม <span className="font-semibold text-slate-800 bg-slate-100 px-2 py-0.5 rounded text-xs"><Printer className="w-3 h-3 inline mr-1"/>พิมพ์รายงาน (PDF)</span> เพื่อสั่งพิมพ์หรือบันทึกเก็บไว้เป็นไฟล์ PDF</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     ) : (
                         <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-200 print:shadow-none print:border-none print:rounded-none">
